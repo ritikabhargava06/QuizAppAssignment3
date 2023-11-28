@@ -9,6 +9,43 @@ public class MyApp extends Application {
     private ArrayList<Question> appLevelQuestionsList = new ArrayList<>();
     private ArrayList<Integer> appLevelColorsList =  new ArrayList<>();
 
+    private int currentIndex=0;
+    private int currentColor;
+    private boolean newAttempt=true;
+    private int correctAnswers=0;
+
+    public int getCorrectAnswers() {
+        return correctAnswers;
+    }
+
+    public void setCorrectAnswers(int correctAnswers) {
+        this.correctAnswers = correctAnswers;
+    }
+
+    public boolean isNewAttempt() {
+        return newAttempt;
+    }
+
+    public void setNewAttempt(boolean newAttempt) {
+        this.newAttempt = newAttempt;
+    }
+
+    public int getCurrentColor() {
+        return currentColor;
+    }
+
+    public void setCurrentColor(int currentColor) {
+        this.currentColor = currentColor;
+    }
+
+    public int getCurrentIndex() {
+        return currentIndex;
+    }
+
+    public void setCurrentIndex(int currentIndex) {
+        this.currentIndex = currentIndex;
+    }
+
     public void setAppLevelQuestionsList(ArrayList<Question> appLevelQuestionsList) {
         this.appLevelQuestionsList = appLevelQuestionsList;
     }
