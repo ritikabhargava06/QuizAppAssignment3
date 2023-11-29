@@ -9,10 +9,29 @@ public class MyApp extends Application {
     private ArrayList<Question> appLevelQuestionsList = new ArrayList<>();
     private ArrayList<Integer> appLevelColorsList =  new ArrayList<>();
 
+    private FileManager fileManager;
+
+    public FileManager getFileManager() {
+        if(fileManager==null){
+            fileManager = new FileManager();
+        }
+        return fileManager;
+    }
+
     private int currentIndex=0;
     private int currentColor;
     private boolean newAttempt=true;
     private int correctAnswers=0;
+
+   // private int attemptNo=1;
+
+//    public int getAttemptNo() {
+//        return attemptNo;
+//    }
+//
+//    public void setAttemptNo(int attemptNo) {
+//        this.attemptNo = attemptNo;
+//    }
 
     public int getCorrectAnswers() {
         return correctAnswers;

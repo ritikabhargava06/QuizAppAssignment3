@@ -4,4 +4,15 @@
     <string name="false_button_text">False</string>
     <string name="correct_answer_msg">Correct!</string>
     <string name="Incorrect_answer_msg">Incorrect!</string>
+    <string name="quiz_file_name">Quiz-AttemptsData.txt</string>
+    <string name="file_append_task_name">append</string>
+    <string name="file_clear_task_name">clear</string>
+    <string name="data_saved_msg">Data saved successfully</string>
+    <string name="result_alert_title">Result</string>
+    <string name="result_alert_save_button_text">Save</string>
+    <string name="result_alert_ignore_button_text">Ignore</string>
+    <string name="menu_get_the_average_title">Get The Average</string>
+    <string name="menu_select_the_number_of_questions_title">Select the number of Questions</string>
+    <string name="menu_reset_the_saved_result_title">Reset the saved Result</string>
+    <string name="file_data_erased_msg">File data erased</string>
 </resources>

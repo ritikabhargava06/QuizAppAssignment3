@@ -1,8 +1,12 @@
 package com.example.quizappassignment3ritika;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
@@ -26,6 +30,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     boolean currQuesAns;
     int currColor;
     int correctAns;
+    FileManager fm;
 
 
     @Override
@@ -41,6 +46,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bFalse.setOnClickListener(this);
         currIndex = ((MyApp)getApplication()).getCurrentIndex();
         correctAns = ((MyApp)getApplication()).getCorrectAnswers();
+        fm = ((MyApp)getApplication()).getFileManager();
 
         if(((MyApp)getApplication()).isNewAttempt()){
             shuffleListsIfRequired();
@@ -126,10 +132,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     @Override
-    public void saveData() {
-        Toast.makeText(MainActivity.this,"Ready to save the data",Toast.LENGTH_LONG).show();
-        //save data to file storage
-        //set correct answers to 0 to reset for new attempt
+    public void saveData(int attempt) {
+        //((MyApp) getApplication()).setAttemptNo(attempt);
+        fm.updateQuizResultInFile(MainActivity.this,attempt,currentQuesList.size(),correctAns,getString(R.string.file_append_task_name));
+        Toast.makeText(MainActivity.this, R.string.data_saved_msg,Toast.LENGTH_LONG).show();
         ((MyApp) getApplication()).setCorrectAnswers(0);
         correctAns = ((MyApp) getApplication()).getCorrectAnswers();
     }
@@ -138,5 +144,31 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void resetForNewAttempt() {
         ((MyApp) getApplication()).setCorrectAnswers(0);
         correctAns = ((MyApp) getApplication()).getCorrectAnswers();
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.quiz_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.getAverage:
+                //display average by reading data from file
+                return true;
+            case R.id.selectTotalQuestions:
+                //set the number of questions
+                return true;
+            case R.id.resetSavedResult:
+                fm.updateQuizResultInFile(MainActivity.this,0,0,0,getString(R.string.file_clear_task_name));
+                Toast.makeText(MainActivity.this, R.string.file_data_erased_msg,Toast.LENGTH_LONG).show();
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
