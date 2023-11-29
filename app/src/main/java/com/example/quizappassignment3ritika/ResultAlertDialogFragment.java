@@ -9,23 +9,24 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.fragment.app.DialogFragment;
 
-public class AlertFragment extends DialogFragment {
+public class ResultAlertDialogFragment extends DialogFragment {
 
     interface alertButtonClickListener{
-        void saveData(int attempNo);
+        void saveData(int attemptNo, int totalQ);
         void resetForNewAttempt();
     }
 
     static int totalQues;
     static int totalCorrectAns;
 
-    static int attempt=0;
+    static int attempt;
 
     alertButtonClickListener listener;
-    public static AlertFragment newInstance(int total, int correctAns){
+    public static ResultAlertDialogFragment newInstance(int total, int correctAns, int oldAttemptsInFile){
         totalQues = total;
         totalCorrectAns = correctAns;
-        return new AlertFragment();
+        attempt = oldAttemptsInFile;
+        return new ResultAlertDialogFragment();
     }
 
     @NonNull
@@ -39,7 +40,7 @@ public class AlertFragment extends DialogFragment {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 attempt++;
-                listener.saveData(attempt);
+                listener.saveData(attempt,totalQues);
                 dismiss();
             }
         });

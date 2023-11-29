@@ -27,7 +27,7 @@ public class QuestionFragment extends Fragment {
         View questionView = inflater.inflate(R.layout.fragment_question_layout,container,false);
         TextView quesTextView = questionView.findViewById(R.id.question_textview);
         quesTextView.setText(quesText);
-        quesTextView.setBackgroundColor(quesColor);
+        quesTextView.setBackgroundResource(quesColor);
         return questionView;
     }
 }

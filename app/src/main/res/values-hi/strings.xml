@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">प्रश्नोत्तरी एप्लिकेशन</string>
+    <string name="true_button_text">सत्य</string>
+    <string name="false_button_text">असत्य</string>
+    <string name="correct_answer_msg">सही जवाब</string>
+    <string name="Incorrect_answer_msg">ग़लत जवाब</string>
+    <string name="data_saved_msg">डेटा सफलतापूर्वक सहेजा गया</string>
+    <string name="result_alert_title">परिणाम</string>
+    <string name="result_alert_save_button_text">सहेजें</string>
+    <string name="result_alert_ignore_button_text">सहेजें मत</string>
+    <string name="menu_get_the_average_title">औसत प्राप्त करें</string>
+    <string name="menu_select_the_number_of_questions_title">प्रश्नों की संख्या चुनें</string>
+    <string name="menu_reset_the_saved_result_title">सहेजे गए परिणाम को रीसेट करें</string>
+    <string name="file_data_erased_msg">फ़ाइल डेटा मिटा दिया गया</string>
+    <string name="question1_text">Azure पोर्टल लगातार अपडेट होता रहता है और रखरखाव गतिविधियों के लिए किसी डाउनटाइम की आवश्यकता नहीं होती है</string>
+    <string name="question2_text">सर्वर रहित कंप्यूटिंग डेवलपर्स को बुनियादी ढांचे के प्रबंधन की आवश्यकता को समाप्त करके तेजी से एप्लिकेशन बनाने में सक्षम बनाती है</string>
+    <string name="question3_text">Azure मार्केटप्लेस Microsoft उत्पादों के लिए Azure पर विशिष्ट सेवा है</string>
+    <string name="question4_text">Azure सेवाएँ बनाने और उपयोग करने के लिए; आपको Azure सदस्यता की आवश्यकता है</string>
+    <string name="question5_text">क्षैतिज स्केलेबिलिटी तब होती है जब वर्चुअल मशीन में अतिरिक्त रैम या सीपीयू जोड़कर कंप्यूटिंग क्षमता को बढ़ाया जा सकता है</string>
+    <string name="question6_text">एक Azure खाते में केवल एक ही सदस्यता हो सकती है</string>
+    <string name="question7_text">यदि आप कोई संसाधन समूह हटाते हैं; उस समूह में मौजूद सभी संसाधन भी हटा दिए जाते हैं</string>
+    <string name="question8_text">सभी Azure क्षेत्र उपलब्धता क्षेत्र का समर्थन करते हैं</string>
+    <string name="question9_text">Azure Cosmos DB केवल मालिकाना (मालिक या स्वामित्व से संबंधित) एपीआई का समर्थन करता है</string>
+    <string name="question10_text">Azure Cosmos DB का उपयोग करने का एक प्रमुख लाभ यह लचीलापन है कि यह डेवलपर्स को उन एपीआई का उपयोग करने की अनुमति देता है जिनसे वे सबसे अधिक परिचित हैं</string>
+    <string name="average_alert_ok_button_text">ठीक है</string>
+    <string name="select_questions_fragement_textview_text">प्रश्नों की कुल संख्या चुनें</string>
+    <string name="select_ques_fragment_done_button_text">हो गया</string>
+    <string name="select_ques_fragment_cancel_button_text">रद्द करे</string>
+</resources>

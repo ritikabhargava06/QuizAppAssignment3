@@ -4,9 +4,9 @@
     <string name="false_button_text">False</string>
     <string name="correct_answer_msg">Correct!</string>
     <string name="Incorrect_answer_msg">Incorrect!</string>
-    <string name="quiz_file_name">Quiz-AttemptsData.txt</string>
-    <string name="file_append_task_name">append</string>
-    <string name="file_clear_task_name">clear</string>
+    <string name="quiz_file_name" translatable="false">Quiz-AttemptsData.txt</string>
+    <string name="file_append_task_name" translatable="false">append</string>
+    <string name="file_clear_task_name" translatable="false">clear</string>
     <string name="data_saved_msg">Data saved successfully</string>
     <string name="result_alert_title">Result</string>
     <string name="result_alert_save_button_text">Save</string>
@@ -15,4 +15,19 @@
     <string name="menu_select_the_number_of_questions_title">Select the number of Questions</string>
     <string name="menu_reset_the_saved_result_title">Reset the saved Result</string>
     <string name="file_data_erased_msg">File data erased</string>
+    <string name="question1_text">The Azure Portal updates continuously and requires no downtime for maintenance activities</string>
+    <string name="question2_text">Serverless computing enables developers to build applications faster by eliminating the need for them to manage infrastructure</string>
+    <string name="question3_text">The Azure Marketplace is a service on Azure specific to Microsoft Products</string>
+    <string name="question4_text">To create and use Azure services; you need an Azure subscription</string>
+    <string name="question5_text">Horizontal scalability is when computing capacity can be increased by adding additional RAM or CPUs to a virtual machine</string>
+    <string name="question6_text">An Azure account can only have a single subscription</string>
+    <string name="question7_text">If you delete a resource group; all resources contained within that group are also deleted</string>
+    <string name="question8_text">All Azure Regions support Availability Zones</string>
+    <string name="question9_text">Azure Cosmos DB only supports proprietary(relating to an owner or ownership)APIs</string>
+    <string name="question10_text">One major benefit of using Azure Cosmos DB is the flexibility it allows developers to use the APIs they are most familiar with</string>
+    <string name="average_alert_ok_button_text">OK</string>
+    <string name="resultalert_tag_name" translatable="false">ResultAlert</string>
+    <string name="select_questions_fragement_textview_text">Select the total number of Questions</string>
+    <string name="select_ques_fragment_done_button_text">Done</string>
+    <string name="select_ques_fragment_cancel_button_text">Cancel</string>
 </resources>
