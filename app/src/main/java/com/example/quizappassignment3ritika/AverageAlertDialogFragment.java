@@ -24,14 +24,15 @@ public class AverageAlertDialogFragment extends DialogFragment {
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
         super.onCreateDialog(savedInstanceState);
         AlertDialog.Builder builder = new AlertDialog.Builder(requireContext());
-        builder.setMessage("Your average score is: "+averageResult+" in "+total+" attempts");
+        builder.setMessage("Your average percentage is: "+averageResult+"% in "+total+" attempts");
         builder.setPositiveButton(R.string.average_alert_ok_button_text, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
                 dismiss();
             }
         });
-
         return builder.create();
     }
+
+
 }

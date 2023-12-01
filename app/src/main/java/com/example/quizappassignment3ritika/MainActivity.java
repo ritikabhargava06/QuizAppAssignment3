@@ -47,6 +47,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             if(fragment!=null){
                 fragment.questionsListener = this;
             }
+            if(savedInstanceState.getBoolean("selectQuestionMenu")){
+                disableSelectQuestionsMenu = true;
+            }
         }
         bTrue = findViewById(R.id.true_button);
         bFalse = findViewById(R.id.false_button);
@@ -194,12 +197,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     void displayAverageResult(){
-        ArrayList<Integer> ansList = fm.getAllCorrectAnswersFromFile(MainActivity.this);
-        int sum = 0;
-        for (Integer i:ansList) {
-            sum=sum+i;
+        ArrayList<CorrectAnswerAttempt> ansList = fm.getAllCorrectAnswersFromFile(MainActivity.this);
+        float sumOfScorePercentage = 0;
+        for (CorrectAnswerAttempt attempt :ansList) {
+            sumOfScorePercentage=sumOfScorePercentage+attempt.getScorePercentage();
         }
-        int average = sum/ansList.size();
+        int average = (int) ((sumOfScorePercentage/ansList.size())*100);
         AverageAlertDialogFragment.newInstance(average,ansList.size()).show(getSupportFragmentManager(),null);
     }
 
@@ -212,5 +215,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             index++;
         }
         currentQuesList = subList;
+    }
+
+    @Override
+    protected void onSaveInstanceState(@NonNull Bundle outState) {
+        super.onSaveInstanceState(outState);
+        outState.putBoolean("selectQuestionMenu",disableSelectQuestionsMenu);
     }
 }

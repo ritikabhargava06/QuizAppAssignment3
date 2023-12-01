@@ -28,7 +28,6 @@ public class SetQuestionsDialogFragment extends DialogFragment {
         totalQuestions = totalNo;
         return new SetQuestionsDialogFragment();
     }
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -64,7 +63,6 @@ public class SetQuestionsDialogFragment extends DialogFragment {
                 dismiss();
             }
         });
-
         cancelButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,6 +70,5 @@ public class SetQuestionsDialogFragment extends DialogFragment {
             }
         });
         return fragmentView;
-
     }
 }

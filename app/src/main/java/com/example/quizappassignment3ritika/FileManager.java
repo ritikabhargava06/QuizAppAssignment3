@@ -16,7 +16,8 @@ public class FileManager {
         String dataString = "";
         int mode = Context.MODE_PRIVATE;
         if (task.equals(context.getString(R.string.file_append_task_name))){
-            dataString = "Attempt"+attempt+"-"+correctAns+"-"+size+"\n";
+            CorrectAnswerAttempt correctAnsObj = new CorrectAnswerAttempt(String.valueOf(attempt),correctAns,size, (float)correctAns/(float)size);
+            dataString = correctAnsObj.toString();
             mode = Context.MODE_APPEND;
         }
         try {
@@ -27,8 +28,8 @@ public class FileManager {
         }
     }
 
-    ArrayList<Integer> getAllCorrectAnswersFromFile(Context context){
-        ArrayList<Integer> correctAnsList = new ArrayList<>();
+    ArrayList<CorrectAnswerAttempt> getAllCorrectAnswersFromFile(Context context){
+        ArrayList<CorrectAnswerAttempt> correctAnsList = new ArrayList<>();
         try {
             FileInputStream fis = context.openFileInput(context.getString(R.string.quiz_file_name));
             InputStreamReader inputStreamReader = new InputStreamReader(fis, StandardCharsets.UTF_8);
@@ -36,7 +37,11 @@ public class FileManager {
             String line = bufferedReader.readLine();
             while(line!=null){
                 String[] resultArray = line.split("-");
-                correctAnsList.add(Integer.parseInt(resultArray[1]));
+                correctAnsList.add(new CorrectAnswerAttempt(resultArray[0],
+                        Integer.parseInt(resultArray[1])
+                        ,Integer.parseInt(resultArray[2]),
+                        Float.parseFloat(resultArray[3])));
+                //correctAnsList.add(Integer.parseInt(resultArray[1]));
                 line = bufferedReader.readLine();
             }
         } catch (IOException e) {
