@@ -15,7 +15,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.Collections;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, ResultAlertDialogFragment.alertButtonClickListener, SetQuestionsDialogFragment.SetQuestionsListener {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener,
+        ResultAlertDialogFragment.alertButtonClickListener,
+        SetQuestionsDialogFragment.SetQuestionsListener{
 
     QuestionBank qb = new QuestionBank();
     ArrayList<Question> currentQuesList = new ArrayList<>();
@@ -222,4 +224,5 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         super.onSaveInstanceState(outState);
         outState.putBoolean("selectQuestionMenu",disableSelectQuestionsMenu);
     }
+
 }
